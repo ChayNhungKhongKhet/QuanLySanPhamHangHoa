@@ -1,0 +1,55 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Master_Page_User.master.cs" Inherits="PhamNgocTan_2050531200307_AppWebBanHang.Master_Page_User" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            width: 440px;
+            height: 114px;
+        }
+        .auto-style2 {
+            height: 219px;
+        }
+        .auto-style3 {
+            width: 447px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+        </div>
+        <table style="width: 100%; height: 760px;">
+            <tr>
+                <td class="auto-style2" colspan="3">
+                    <img alt="" class="auto-style1" src="IMAGES/BANNER.jfif" /></td>
+            </tr>
+            <tr>
+                <td class="auto-style3">
+                    <asp:Repeater ID="Repeater1" runat="server">
+                        <ItemTemplate>
+                            <a href ="pageDanh_Sach_San_Pham.aspx?MaDanhMuc=<%# Eval("MaDanhMuc") %>">
+                                <%# Eval("TenDanhMuc") %>
+                                <br />
+                            </a>
+                        </ItemTemplate>
+                    </asp:Repeater>
+                </td>
+                <td>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+                </td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td colspan="3">&nbsp;</td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
